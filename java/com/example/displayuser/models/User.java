@@ -16,8 +16,6 @@ public class User {
 
     String avatar;
 
-    String support;
-
 
     public int getId() {
         return id;
@@ -37,10 +35,6 @@ public class User {
 
     public String getFirstName() {
         return firstName;
-    }
-
-    public String getSupport() {
-        return support;
     }
 
 
