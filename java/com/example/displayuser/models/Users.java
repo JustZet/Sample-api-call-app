@@ -35,6 +35,10 @@ public class Users {
         return totalPages;
     }
 
+    public void setData(List<User> data) {
+        this.data = data;
+    }
+
     public List<User> getData() {
         return data;
     }

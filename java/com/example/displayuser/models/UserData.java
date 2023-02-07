@@ -1,7 +1,7 @@
 package com.example.displayuser.models;
 
 
-public class Data {
+public class UserData {
     User data;
     Support support;
 
