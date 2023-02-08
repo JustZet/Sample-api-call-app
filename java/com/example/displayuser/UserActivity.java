@@ -1,7 +1,6 @@
 package com.example.displayuser;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,7 +40,6 @@ public class UserActivity extends AppCompatActivity {
     }
 
     public void parseUser() {
-        // get extra paramethers
         Bundle extras = getIntent().getExtras();
 
         // get user id
@@ -49,38 +47,34 @@ public class UserActivity extends AppCompatActivity {
             String value = extras.getString("userId");
             this.fetchUserData(value);
 
-        // fetch default user id
+        // get default user id
         } else {
             this.fetchUserData("1");
         }
+
     }
 
     // fetch user with defined id
     public void fetchUserData(String id) {
+
         Call<UserData> call = ApiService.getUser(id);
+
         call.enqueue(new Callback<UserData>() {
 
             @Override
             public void onResponse(Call<UserData> call, Response<UserData> response) {
-                if (response.code() != 200) {
-                    email.setText("User not found");
-                }
-
                 User user = response.body().getData();
 
                 email.setText(user.getEmail());
                 firstName.setText(user.getFirstName());
                 lastName.setText(user.getLastName());
 
-                Glide.with(getApplicationContext())
-                    .load(user.getAvatar())
-                    .into(avatar);
+                Glide.with(getApplicationContext()).load(user.getAvatar()).into(avatar);
             }
 
             @Override
-            public void onFailure(Call<UserData> call, Throwable t) {
-                email.setText("Something went wrong, please try again later...");
-            }
+            public void onFailure(Call<UserData> call, Throwable t) {}
         });
     }
+
 }

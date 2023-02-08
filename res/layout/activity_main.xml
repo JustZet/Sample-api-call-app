@@ -20,15 +20,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".MainActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="All users:"
-            android:textColor="#222222"
-            android:textSize="26sp"
-            android:textStyle="bold" />
-
         <ListView
             android:id="@+id/users_listView"
             android:layout_width="match_parent"

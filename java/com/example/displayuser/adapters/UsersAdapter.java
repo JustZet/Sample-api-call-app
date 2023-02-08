@@ -49,8 +49,8 @@ public class UsersAdapter extends ArrayAdapter<User> {
     }
 
     public void getUserView(View v) {
-         userFirstName = v.findViewById(R.id.card_userLastName);
-         userLastName =  v.findViewById(R.id.card_userFirstName);
+         userFirstName = v.findViewById(R.id.card_userFirstName);
+         userLastName =  v.findViewById(R.id.card_userLastName);
          userEmail = v.findViewById(R.id.card_userEmail);
          userAvatar = v.findViewById(R.id.card_userAvatar);
     }

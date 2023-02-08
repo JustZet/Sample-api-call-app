@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/card_userAvatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:scaleType="fitXY"
         android:layout_centerHorizontal="true"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
         android:background="@drawable/circle"
-        android:clipToOutline="true"
-        android:id="@+id/card_userAvatar"/>
+        android:clipToOutline="true" />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -23,23 +25,24 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textAlignment="textStart">
 
             <TextView
                 android:id="@+id/card_userFirstName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="lastName" />
 
             <TextView
                 android:id="@+id/card_userLastName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="2dp"
                 android:layout_weight="1"
                 android:text="firstName" />
 
@@ -47,7 +50,7 @@
 
         <TextView
             android:id="@+id/card_userEmail"
-            android:layout_width="match_parent"
+            android:layout_width="212dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="email" />
